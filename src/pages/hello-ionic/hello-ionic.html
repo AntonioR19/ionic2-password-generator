@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Password Generator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list radio-group>
+
+    <ion-list-header>
+      Livello di sicurezza
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Molto basso</ion-label>
+      <ion-radio checked="true" value="1" (click)="change_sic(1)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Basso</ion-label>
+      <ion-radio value="2" (click)="change_sic(2)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Medio</ion-label>
+      <ion-radio value="3" (click)="change_sic(3)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Alto</ion-label>
+      <ion-radio value="4" (click)="change_sic(4)"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Esagerato</ion-label>
+      <ion-radio value="5" (click)="click_sic_5()"></ion-radio>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Prefix" [(ngModel)]="prefisso"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" min="8" max="30" placeholder="Lenght" [(ngModel)]="lunghezza"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button large full (click)='verifica()'><span>Generate</span><ion-icon name="key"></ion-icon></button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label text-center id="psw"><span>{{password}}</span></ion-label>
+    </ion-item>
+
+
+</ion-list>
+
+</ion-content>
